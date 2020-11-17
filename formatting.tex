@@ -1,3 +1,22 @@
 % essential packages
 \usepackage{parskip} % fix annoying indentation
 \usepackage{xurl} % URLs with correct linebreaks
+
+% colour definitions
+\usepackage{xcolor}
+\definecolor{darkblue}{rgb}{0.2, 0.2, 0.6}
+\definecolor{lightblue}{rgb}{0.3, 0.6, 0.7}
+\definecolor{otherblue}{rgb}{0.0, 0.3, 0.4}
+\definecolor{purple}{rgb}{0.5, 0.0, 0.5}
+
+% text boxes
+\usepackage[most]{tcolorbox}
+
+% linking
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks = true,    % colour links
+	linktoc = all,        % both sections and subsections linked
+	linkcolor = darkblue, % colour of internal links
+	urlcolor = purple     % colour of urls
+}
