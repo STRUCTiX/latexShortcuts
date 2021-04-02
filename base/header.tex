@@ -1,0 +1,19 @@
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+\pagestyle{fancy}
+\fancyhf{}
+
+% E for even page
+% O for odd page
+% L for left side
+% C for centered
+% R for right side
+\fancyhead[LE,RO]{\rightheader}
+\fancyhead[CE,CO]{\centerheader}
+\fancyhead[RE,LO]{\leftheader}
+\fancyfoot[CE,CO]{\leftmark}
+\fancyfoot[LE,RO]{\thepage\ of \pageref{LastPage}}
+
+\renewcommand{\headrulewidth}{2pt}
+\renewcommand{\footrulewidth}{1pt}

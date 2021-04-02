@@ -3,13 +3,40 @@
 \input{../base/packages.tex}
 \input{../base/german.tex}
 \input{../base/customfonts.tex}
+\input{../base/header.tex}
 
 \input{../formatting.tex}
 \input{../commands.tex}
 
+\newcommand{\leftheader}{links}
+\newcommand{\centerheader}{Mitte}
+\newcommand{\rightheader}{\today}
+
+\usepackage{luacode}
+
+\begin{luacode*}
+function exercisetable(n)
+        tex.print('\\begin{table}\\begin{tabular}{')
+        for i = 0, n-1 do
+                tex.print('c|')
+        end
+        tex.print('c}')
+        for i = 0, n-1 do
+                tex.print(string.format('%d \\hspace{1cm} &', i + 1))
+        end
+        tex.print('$\\sum$ \\hspace{1cm} \\\\ \\hline')
+        for i = 0, n-1 do
+                tex.print('&')
+        end
+        tex.print('\\\\ \\end{tabular}\\end{table}')
+end
+\end{luacode*}
+\newcommand{\exercisetable}[1]{\luadirect{exercisetable(#1)}}
+
 
 \begin{document}
 
-
+Hollo
+\exercisetable{3}
 
 \end{document}
