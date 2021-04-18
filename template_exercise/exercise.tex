@@ -16,7 +16,9 @@
 
 \begin{luacode*}
 function exercisetable(n)
-        tex.print('\\begin{table}\\begin{tabular}{')
+        tex.print('\\begin{flushright}')
+        tex.print('\\begin{tabular}{r} Name 1 \\\\ Name 2\\end{tabular}')
+        tex.print('\\begin{tabular}{')
         for i = 0, n-1 do
                 tex.print('c|')
         end
@@ -28,7 +30,7 @@ function exercisetable(n)
         for i = 0, n-1 do
                 tex.print('&')
         end
-        tex.print('\\\\ \\end{tabular}\\end{table}')
+        tex.print('\\\\ \\end{tabular}\\end{flushright}')
 end
 \end{luacode*}
 \newcommand{\exercisetable}[1]{\luadirect{exercisetable(#1)}}
@@ -36,7 +38,6 @@ end
 
 \begin{document}
 
-Hollo
 \exercisetable{3}
 
 \end{document}
